@@ -13,17 +13,17 @@ const Analytics = ({ towers }: { towers: CellTower[] }) => {
     <section className={styles.analyticsContainer}>
       <AnalyticCard
         title="Total Towers"
-        icon={<RadioTower size={22} />}
+        icon={<RadioTower />}
         value={getTotalTowers(towers)}
       />
       <AnalyticCard
         title="Active Towers"
-        icon={<Activity size={22} />}
+        icon={<Activity />}
         value={getActiveTowers(towers)}
       />
       <AnalyticCard
         title="Average Signal"
-        icon={<Signal size={22} />}
+        icon={<Signal />}
         value={getAverageSignal(towers)}
       />
     </section>
