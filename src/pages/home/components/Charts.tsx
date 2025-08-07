@@ -1,6 +1,6 @@
 import type { CellTower } from "@/types/tower";
-import BarChart from "./BarChart";
-import PieChart from "./PieChart";
+import BarChart from "./charts/BarChart";
+import PieChart from "./charts/PieChart";
 import styles from "./Charts.module.scss";
 
 interface ChartsProps {
