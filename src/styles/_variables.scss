@@ -2,8 +2,17 @@ $background-color: #fff;
 $primary-color: #ff7801;
 $primary-foreground-color: #0c0c0c;
 $secondary-foreground-color: #828484;
-$spacing-unit: 1rem;
+$border-color: #e0e0e0;
 $max-width: 1400px;
+$spacing-unit: 0.25rem;
+$border-radius: $spacing-unit * 1;
+$box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-xxl: 2rem;
 
 $breakpoints: (
   sm: 576px,
