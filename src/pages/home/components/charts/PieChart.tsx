@@ -51,7 +51,7 @@ const PieChart = ({ towers, size = 240 }: PieChartProps) => {
       .data(pie(data))
       .enter()
       .append("path")
-      .attr("d", arc as any)
+      .attr("d", arc)
       .attr("fill", (d) => color(d.data.label) as string);
 
     
