@@ -27,6 +27,10 @@
   justify-content: center;
   border: 1px solid $border-color;
 }
+.icon svg{
+  width: 1.5rem;
+  height: 1.5rem;
+}
 
 .value {
   font-size: $font-size-xl;
