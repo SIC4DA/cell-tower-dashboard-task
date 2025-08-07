@@ -1,0 +1,20 @@
+.chartsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: $spacing-unit * 4;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $spacing-unit * 4;
+}
+
+.chartWrapper {
+  padding: $spacing-unit * 4;
+  border: 1px solid $border-color;
+  border-radius: $border-radius * 2;
+  box-shadow: $box-shadow;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+}
