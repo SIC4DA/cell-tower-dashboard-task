@@ -1,9 +1,18 @@
-import styles from "./home.module.scss";
+import Header from "@/components/header/Header";
+import useGetCellTowers from "@/hooks/useGetCellTowers";
+import Analytics from "./components/Analytics";
 
 export default function HomePage() {
+  const { data, loading } = useGetCellTowers();
+
+  if (loading) return <div>Loading...</div>;
+
+  if (!data) return <div>No data</div>;
+
   return (
-    <div className={styles.container}>
-      <div>Cell Tower Dashboard Task</div>
-    </div>
+    <main>
+      <Header />
+      <Analytics towers={data} />
+    </main>
   );
 }
