@@ -6,7 +6,7 @@ export const applyFilters = <T extends { id: string; name: string }>(
   return data.filter((item) => {
     const matchesSearch = item.name
       .toLowerCase()
-      .includes(search.toLowerCase());
+      .includes(search.trim().toLowerCase());
 
     const matchesFilters = (
       Object.entries(filters) as Array<[keyof T, string]>
