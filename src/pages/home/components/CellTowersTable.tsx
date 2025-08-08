@@ -2,6 +2,12 @@ import DataTable, { type Column } from "@/components/data-table/DataTable";
 import type { CellTower } from "@/types/tower";
 import styles from "./CellTowersTable.module.scss";
 
+export type FilterOption<T> = {
+  key: keyof T;
+  label: string;
+  options: string[];
+};
+
 const columns: Column<CellTower>[] = [
   { key: "id", label: "ID" },
   { key: "name", label: "Name" },
@@ -11,11 +17,7 @@ const columns: Column<CellTower>[] = [
   { key: "signalStrength", label: "Signal Strength" },
 ];
 
-const filterOptions: {
-  key: keyof CellTower;
-  label: string;
-  options: string[];
-}[] = [
+const filterOptions: FilterOption<CellTower>[] = [
   { key: "status", label: "Status", options: ["Active", "Offline"] },
   {
     key: "networkType",
