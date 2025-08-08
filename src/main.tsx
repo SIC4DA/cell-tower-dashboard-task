@@ -6,5 +6,5 @@ import "./styles/main.scss";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Home />
-  </StrictMode>
+  </StrictMode>,
 );

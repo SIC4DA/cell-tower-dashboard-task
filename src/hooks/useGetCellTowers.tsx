@@ -23,7 +23,7 @@ const useGetCellTowers = (): UseGetCellTowersReturn => {
 
         // a fake network delay (200ms - 500ms)
         await new Promise((resolve) =>
-          setTimeout(resolve, Math.random() * 300 + 200)
+          setTimeout(resolve, Math.random() * 300 + 200),
         );
 
         const towers = cellTowersData as CellTower[];
@@ -31,7 +31,7 @@ const useGetCellTowers = (): UseGetCellTowersReturn => {
         setData(towers);
       } catch (err) {
         setError(
-          err instanceof Error ? err.message : "An unknown error occurred"
+          err instanceof Error ? err.message : "An unknown error occurred",
         );
         setData(null);
       } finally {

@@ -12,11 +12,11 @@ const Charts = ({ towers }: ChartsProps) => {
     <section className={styles.chartsContainer}>
       <div className={styles.chartWrapper}>
         <h3>Distribution by City</h3>
-        <BarChart towers={towers}  />
+        <BarChart towers={towers} />
       </div>
       <div className={styles.chartWrapper}>
         <h3>Active vs Offline</h3>
-        <PieChart towers={towers}  />
+        <PieChart towers={towers} />
       </div>
     </section>
   );

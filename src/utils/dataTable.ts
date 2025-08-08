@@ -1,7 +1,7 @@
 export const applyFilters = <T extends { id: string; name: string }>(
   data: T[],
   search: string,
-  filters: Partial<Record<keyof T, string>>
+  filters: Partial<Record<keyof T, string>>,
 ): T[] => {
   return data.filter((item) => {
     const matchesSearch = item.name

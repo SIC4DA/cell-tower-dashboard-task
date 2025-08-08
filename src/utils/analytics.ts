@@ -11,5 +11,5 @@ export function getActiveTowers(towers: CellTower[]) {
 export function getAverageSignal(towers: CellTower[]) {
   if (towers.length === 0) return "0";
   const total = towers.reduce((sum, t) => sum + t.signalStrength, 0);
-  return Math.round(total / towers.length).toString() ;
+  return Math.round(total / towers.length).toString();
 }

@@ -40,7 +40,6 @@ const BarChart = ({ towers, width = 320, height = 240 }: BarChartProps) => {
       .nice()
       .range([height - margin.bottom, margin.top]);
 
-
     svg
       .append("g")
       .attr("fill", "var(--color-primary, #3b82f6)")
@@ -52,7 +51,6 @@ const BarChart = ({ towers, width = 320, height = 240 }: BarChartProps) => {
       .attr("height", (d) => y(0) - y(d.count))
       .attr("width", x.bandwidth());
 
-    
     svg
       .append("g")
       .attr("transform", `translate(0,${height - margin.bottom})`)
@@ -64,14 +62,20 @@ const BarChart = ({ towers, width = 320, height = 240 }: BarChartProps) => {
       .attr("transform", "rotate(-40)")
       .style("text-anchor", "end");
 
-    
     svg
       .append("g")
       .attr("transform", `translate(${margin.left},0)`)
       .call(d3.axisLeft(y).ticks(5));
   }, [towers, width, height]);
 
-  return <svg ref={ref} width={width} height={height} style={{ width: "unset", margin: "0 auto", display: "block" }} />;
+  return (
+    <svg
+      ref={ref}
+      width={width}
+      height={height}
+      style={{ width: "unset", margin: "0 auto", display: "block" }}
+    />
+  );
 };
 
 export default BarChart;
