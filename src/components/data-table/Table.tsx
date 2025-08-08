@@ -17,15 +17,25 @@ const Table = <T extends { id: string }>({ data, columns }: TableProps<T>) => {
             ))}
           </tr>
         </thead>
-        <tbody>
-          {data.map((row) => (
-            <tr key={row.id}>
-              {columns.map((col) => (
-                <td key={String(col.key)}>{String(row[col.key])}</td>
-              ))}
+        {data.length > 0 ? (
+          <tbody>
+            {data.map((row) => (
+              <tr key={row.id}>
+                {columns.map((col) => (
+                  <td key={String(col.key)}>{String(row[col.key])}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        ) : (
+          <tbody className={styles.tableEmpty}>
+            <tr>
+              <td colSpan={columns.length} className={styles.tableEmptyCell}>
+                No data found
+              </td>
             </tr>
-          ))}
-        </tbody>
+          </tbody>
+        )}
       </table>
     </div>
   );

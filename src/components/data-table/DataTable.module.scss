@@ -102,3 +102,10 @@
     }
   }
 }
+
+.tableEmptyCell {
+  text-align: center;
+  font-size: $font-size-md;
+  color: $secondary-foreground-color;
+  font-weight: 500;
+}
