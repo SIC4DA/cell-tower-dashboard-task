@@ -4,7 +4,7 @@ import type { CellTower } from "@/types/tower";
 
 interface PieChartProps {
   towers: CellTower[];
-  size?: number; // diameter
+  size?: number;
 }
 
 const PieChart = ({ towers, size = 240 }: PieChartProps) => {
@@ -58,7 +58,7 @@ const PieChart = ({ towers, size = 240 }: PieChartProps) => {
     const legendSpacing = 18;
     const legend = svg
       .append("g")
-      .attr("transform", `translate(-55px, -20px)`);
+      .attr("transform", `translate(-40, 10)`);
 
     legend
       .selectAll("rect")
@@ -83,7 +83,7 @@ const PieChart = ({ towers, size = 240 }: PieChartProps) => {
       .attr("dominant-baseline", "middle");
   }, [towers, size]);
 
-  return <svg ref={ref} width={size} height={size} style={{ margin: "0 auto", display: "block", width: "unset" }} />;
+  return <svg ref={ref} width={size} height={size} style={{ margin: "0 auto", display: "block", width: "unset", overflow: "visible" }} />;
 };
 
 export default PieChart;
