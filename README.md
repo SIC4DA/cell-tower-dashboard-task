@@ -6,7 +6,7 @@ A lightweight React + TypeScript dashboard that visualizes a list of cell towers
 
 - **At-a-glance analytics**: Total towers, active towers, and average signal strength
 - **Charts**: D3 Pie (status distribution) and Bar (towers per city)
-- **Data table**: Search by name and filter by status, network type, and city
+- **Data table**: Fuzzy search by name and filter by status, network type, and city
 - **Typed domain model**: Strongly-typed `CellTower` across the app
 - **Fast dev experience**: Vite + React 19, SCSS Modules, path aliases
 
@@ -17,6 +17,7 @@ A lightweight React + TypeScript dashboard that visualizes a list of cell towers
 - **Styling**: SCSS Modules, global SCSS with variables/mixins
 - **Icons**: `lucide-react`
 - **Linting**: ESLint 9 (TypeScript + React Hooks rules)
+- **Testing**: Jest 30 + React Testing Library + jsdom, ts-jest
 
 ---
 
@@ -80,6 +81,7 @@ src/
       components/
         charts/            # D3 Pie and Bar charts
   styles/                  # Global styles, variables, and fonts
+  tests/                   # Unit tests
   types/
     tower.ts               # CellTower type
   utils/                   # Analytics and table filtering helpers
@@ -101,9 +103,9 @@ Notable configuration:
   - `PieChart`: Active vs Offline towers.
   - `BarChart`: Tower counts per city.
 - `CellTowersTable` uses a generic `DataTable` with:
-  - `SearchBar` for case-insensitive name search
+  - `SearchBar` with fuzzy search (via `fuse.js`) on the `name` field
   - `FilterDropdown`s for status/network type/city
-  - `applyFilters` from `src/utils/dataTable.ts` to compute the filtered rows
+  - `applyFilters` from `src/utils/dataTable.ts` to combine dropdown filters and fuzzy search
 
 ### Domain Model
 
@@ -157,4 +159,12 @@ Highly recommended to consider using a dedicated Library like React Query
 - **build**: type-check and build production assets
 - **preview**: preview the production build locally
 - **lint**: run ESLint on the codebase
+- **test**: run unit/component tests once
+- **test:watch**: run tests in watch mode
 
+### Testing
+
+- Test runner: Jest (jsdom environment), configured in `jest.config.ts` and `jest.setup.ts`.
+- TypeScript transform: `ts-jest` with `tsconfig.test.json`.
+- Libraries: `@testing-library/react`, `@testing-library/jest-dom`, `@testing-library/user-event`.
+- Sample tests cover utilities (`analytics`, `dataTable`) and components (`AnalyticCard`, `Analytics`) plus the data hook.
