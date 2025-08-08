@@ -4,6 +4,7 @@ import SearchBar from "./SearchBar";
 import FilterDropdown from "./FilterDropdown";
 import { applyFilters } from "@/utils/dataTable";
 import Table from "./Table";
+import useDebounce from "@/hooks/shared/useDebounce";
 
 export interface Column<T> {
   key: keyof T;
@@ -22,6 +23,8 @@ const DataTable = <T extends { id: string; name: string }>({
   filterOptions,
 }: DataTableProps<T>) => {
   const [search, setSearch] = useState<string>("");
+  // debounced search isn't necessary here since we're not making any API calls, but it's just a representative example of how it could be used
+  const debouncedSearch = useDebounce(search, 500);
   const [filters, setFilters] = useState<Partial<Record<keyof T, string>>>({});
 
   const handleFilterChange = (key: keyof T, value: string) => {
@@ -29,8 +32,8 @@ const DataTable = <T extends { id: string; name: string }>({
   };
 
   const filteredData = useMemo(() => {
-    return applyFilters(data, search, filters);
-  }, [data, search, filters]);
+    return applyFilters(data, debouncedSearch, filters);
+  }, [data, debouncedSearch, filters]);
 
   return (
     <div className={styles.dataTableContainer}>
