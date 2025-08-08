@@ -1,5 +1,5 @@
 import Header from "@/components/header/Header";
-import useGetCellTowers from "@/hooks/useGetCellTowers";
+import useGetCellTowers from "@/hooks/cell-towers/useGetCellTowers";
 import Analytics from "./components/Analytics";
 import Charts from "./components/Charts";
 import CellTowersTable from "./components/CellTowersTable";
