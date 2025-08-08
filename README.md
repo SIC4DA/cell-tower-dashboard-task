@@ -35,12 +35,6 @@ Choose one package manager and stick to it.
 # npm
 npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
 # bun
 bun install
 ```
@@ -50,12 +44,6 @@ bun install
 ```bash
 # npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
 
 # bun
 bun run dev
@@ -73,12 +61,6 @@ npm run build
 npm run preview
 ```
 
-### Lint
-
-```bash
-npm run lint
-```
-
 ---
 
 ## Project Structure
@@ -86,9 +68,9 @@ npm run lint
 ```
 src/
   components/
-    data-table/        # Reusable data table: search, filter, table
-    header/            # App header
-    shared/            # Generic UI pieces (e.g., AnalyticCard)
+    data-table/            # Reusable data table: search, filter, table
+    header/                # App header
+    shared/                # Generic UI pieces (e.g., AnalyticCard)
   hooks/
     useGetCellTowers.tsx   # Loads mock data with a small artificial delay
   mocks/
@@ -176,16 +158,3 @@ Highly recommended to consider using a dedicated Library like React Query
 - **preview**: preview the production build locally
 - **lint**: run ESLint on the codebase
 
----
-
-## Troubleshooting
-
-- **Node version**: Ensure Node 18+.
-- **SCSS variables missing**: Vite injects variables via `vite.config.ts`. If imports fail, confirm the `@` alias and the `additionalData` setting.
-- **Blank charts**: D3 charts render only when there is data; ensure `data` is loaded.
-
----
-
-## License
-
-This project’s license is defined by the repository owner. If none is provided, treat it as internal/private.
