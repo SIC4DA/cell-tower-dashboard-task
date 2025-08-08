@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import cellTowersData from "../mocks/CellTowers.json";
+import cellTowersData from "@/mocks/CellTowers.json";
 import type { CellTower } from "@/types/tower";
 
 interface UseGetCellTowersReturn {
