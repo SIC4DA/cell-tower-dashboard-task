@@ -2,6 +2,7 @@ import Header from "@/components/header/Header";
 import useGetCellTowers from "@/hooks/useGetCellTowers";
 import Analytics from "./components/Analytics";
 import Charts from "./components/Charts";
+import CellTowersTable from "./components/CellTowersTable";
 
 export default function HomePage() {
   const { data, loading } = useGetCellTowers();
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Header />
       <Analytics towers={data} />
       <Charts towers={data} />
+      <CellTowersTable data={data} />
     </main>
   );
 }
