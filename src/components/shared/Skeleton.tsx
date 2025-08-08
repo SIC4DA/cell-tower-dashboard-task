@@ -3,15 +3,13 @@ import styles from "./Skeleton.module.scss";
 
 interface SkeletonProps {
   width?: string | number;
-  height?: string | number;
-  borderRadius?: string | number;
+  height?: string | number; 
   style?: React.CSSProperties;
 }
 
 const Skeleton: React.FC<SkeletonProps> = ({
   width = "100%",
   height = 16,
-  borderRadius = 4,
   style,
 }) => {
   return (
@@ -20,7 +18,6 @@ const Skeleton: React.FC<SkeletonProps> = ({
       style={{
         width,
         height,
-        borderRadius,
         ...style,
       }}
     />

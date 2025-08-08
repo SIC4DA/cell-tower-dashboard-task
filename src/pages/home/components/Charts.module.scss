@@ -1,17 +1,24 @@
 .chartsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: $spacing-unit * 4;
+  gap: $spacing-unit * 5;
   max-width: $max-width;
   margin: 0 auto;
   padding: $spacing-unit * 4;
 }
 
 .chartWrapper {
-  padding: $spacing-unit * 4;
+  padding: $spacing-unit * 5;
   border: 1px solid $border-color;
-  border-radius: $border-radius * 2;
-  box-shadow: $box-shadow;
+  border-radius: $border-radius * 3;
+  background: $subtle-gradient;
+  box-shadow: $shadow-md;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
 }
 
 svg {
@@ -20,8 +27,8 @@ svg {
 }
 
 .chartTitle {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: $spacing-unit * 8;
+  margin-bottom: $spacing-unit * 6;
 }

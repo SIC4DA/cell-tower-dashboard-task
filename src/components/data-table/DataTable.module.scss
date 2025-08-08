@@ -4,38 +4,41 @@
 .filtersContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: $spacing-unit * 4;
+  margin-bottom: $spacing-unit * 5;
   gap: $spacing-unit * 4;
   flex-wrap: wrap;
 }
 
 .searchBar {
   flex-grow: 1;
-  padding: $spacing-unit * 3;
+  padding: $spacing-unit * 3.5;
   border: 1px solid $border-color;
-  border-radius: $border-radius * 2;
+  border-radius: $border-radius * 3;
   font-size: $font-size-sm;
-  transition: border-color 0.2s ease;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
     outline: none;
-    border-color: $primary-color;
+    border-color: $accent-color;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
   }
 }
 
 .filterDropdown {
-  padding: $spacing-unit * 3;
+  padding: $spacing-unit * 3.5;
   border: 1px solid $border-color;
-  border-radius: $border-radius * 2;
+  border-radius: $border-radius * 3;
   font-size: $font-size-sm;
   background: $background-color;
   cursor: pointer;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
   min-width: 150px;
 
   &:focus {
     outline: none;
-    border-color: $primary-color;
+    border-color: $accent-color;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
   }
 
   &:hover {
@@ -45,8 +48,8 @@
 
 .tableWrapper {
   overflow-x: auto;
-  border-radius: $border-radius * 2;
-  box-shadow: $box-shadow;
+  border-radius: $border-radius * 3;
+  box-shadow: $shadow-md;
   background: $background-color;
 }
 
@@ -56,7 +59,7 @@
   font-size: $font-size-sm;
 
   thead {
-    background: $background-color-secondary;
+    background: linear-gradient(180deg, rgba(#f8fafc, 0.9), rgba(#f1f5f9, 0.9));
     border-bottom: 2px solid $border-color;
   }
 
@@ -74,7 +77,7 @@
 
   tbody tr {
     border-bottom: 1px solid $border-color;
-    transition: background-color 0.15s ease;
+    transition: background-color 0.15s ease, transform 0.05s ease;
 
     &:hover {
       background-color: $background-color-secondary;
@@ -95,7 +98,7 @@
   }
 
   tbody tr:nth-child(even) {
-    background-color: #fafbfc;
+    background-color: #fbfdff;
 
     &:hover {
       background-color: $background-color-secondary;

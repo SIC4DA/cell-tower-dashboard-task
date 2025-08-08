@@ -1,11 +1,17 @@
 .header {
-  padding: $spacing-unit * 4 $spacing-unit * 8;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: saturate(180%) blur(10px);
+  background: linear-gradient(180deg, rgba(#ffffff, 0.85), rgba(#ffffff, 0.65));
+  padding: $spacing-unit * 6 $spacing-unit * 8;
   border-bottom: 1px solid $border-color;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: $shadow-sm;
 
   .title {
-    font-size: $font-size-lg;
+    font-size: $font-size-xl;
     font-weight: 700;
+    letter-spacing: -0.01em;
     max-width: $max-width;
     margin: 0 auto;
   }

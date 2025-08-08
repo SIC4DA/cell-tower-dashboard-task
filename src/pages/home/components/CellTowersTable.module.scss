@@ -1,5 +1,10 @@
 .cellTowersTableContainer {
   max-width: $max-width;
-  margin: 0 auto;
+  margin: $spacing-unit * 4 auto $spacing-unit * 8;
   padding: $spacing-unit * 4;
+
+  h2 {
+    margin: 0 0 $spacing-unit * 4 0;
+    font-size: $font-size-xl;
+  }
 }

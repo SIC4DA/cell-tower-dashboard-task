@@ -2,11 +2,19 @@
 @use "fonts";
 
 body {
-  background-color: $background-color;
+  background: radial-gradient(
+      1200px 600px at 10% -10%,
+      #eef2ff 0%,
+      transparent 60%
+    ),
+    radial-gradient(1200px 600px at 110% 10%, #f0f9ff 0%, transparent 60%),
+    $background-color;
   color: $primary-foreground-color;
   font-family: "Roboto", system-ui, Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

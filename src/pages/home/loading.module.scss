@@ -1,19 +1,19 @@
 .loadingContainer {
   max-width: $max-width;
-  margin: $spacing-unit * 4 auto;
+  margin: $spacing-unit * 6 auto;
 }
 
 .analyticsLoadingRow {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: $spacing-unit * 4;
+  gap: $spacing-unit * 5;
   padding: $spacing-unit * 4;
 }
 
 .chartsLoadingRow {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: $spacing-unit * 4;
+  gap: $spacing-unit * 5;
   padding: $spacing-unit * 4;
 }
 

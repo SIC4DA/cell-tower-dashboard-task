@@ -1,8 +1,8 @@
 .analyticsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: $spacing-unit * 4;
+  gap: $spacing-unit * 5;
   max-width: $max-width;
-  margin: $spacing-unit * 4 auto;
+  margin: $spacing-unit * 6 auto;
   padding: $spacing-unit * 4;
 }
